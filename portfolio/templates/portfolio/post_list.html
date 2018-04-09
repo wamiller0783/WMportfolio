@@ -8,21 +8,28 @@
 <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div>
         <h1><a href="/">William Miller's Portfolio</a></h1>
     </div>
 
-    {% for post in posts %}
-    <div>
-        <p>Published {{ post.published_date }}</p>
-        <h2><a href="">{{ post. title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+    <div class ="content container">
+      <div class="row">
+        <div class="col-md-8">
+          {% for post in posts %}
+          <div>
+              <p>Published {{ post.published_date }}</p>
+              <h1><a href="">{{ post. title }}</a></h1>
+              <p>{{ post.text|linebreaksbr }}</p>
 
+          </div>
+
+          {% endfor %}
+        </div>
+      </div>
     </div>
-
-    {% endfor %}
-
+    
   </body>
 </html>
